@@ -332,64 +332,68 @@ function initialiser_filtres_projets() {
   });
 }
 
-// Texte animé (machine à écrire) - Version corrigée
+// Texte animé (machine à écrire) avec curseur dynamique qui avance et recule
 function lancer_animation_texte() {
-  const el = document.getElementById("texte_anime");
-  if (!el) return;
+  const prefixEl = document.getElementById("prefixe_anime");
+  const textEl = document.getElementById("texte_anime");
+  if (!textEl) return;
 
-  const mots = [
-    "Génie Logiciel",
-    "Programmation Orientée Objet",
-    "Systèmes d'Information",
-    "Bases de Données",
-    "Développement d'applications",
+  const roles = [
+    { prefix: "Étudiant en", text: "Génie Logiciel" },
+    { prefix: "Développeur", text: "Backend (Spring Boot & Django)" },
+    { prefix: "Développeur", text: "Backend (Node.JS & Laravel)" },
+    { prefix: "Aspirant Ingénieur", text: "DevOps & Cloud" },
+    { prefix: "Passionné par les", text: "Technologies Cloud-Native" },
+    { prefix: "Étudiant en", text: "Systèmes d'Information" }
   ];
 
-  let i_mot = 0;
-  let i_char = 0;
-  let supprime = false;
+  let roleIndex = 0;
+  let charIndex = roles[0].text.length;
+  let isDeleting = true;
 
-  el.style.borderRight = "2px solid currentColor";
-  el.style.paddingRight = "3px";
-  el.style.display = "inline";
-  el.style.maxWidth = "100%";
-  el.style.overflowWrap = "break-word";
-  el.style.wordBreak = "break-word";
-
-  const style_curseur = document.createElement("style");
-  style_curseur.textContent = `
-    @keyframes clignoter { 0%,100% { border-color: currentColor; } 50% { border-color: transparent; } }
-    #texte_anime { animation: clignoter .8s step-end infinite; }
-  `;
-  document.head.appendChild(style_curseur);
+  if (prefixEl) prefixEl.textContent = roles[0].prefix;
+  textEl.textContent = roles[0].text;
+  textEl.style.borderRight = "none";
+  textEl.style.minWidth = "0";
 
   function taper() {
-    const mot = mots[i_mot];
+    const current = roles[roleIndex];
+    const fullText = current.text;
 
-    if (!supprime) {
-      if (i_char <= mot.length) {
-        el.textContent = mot.substring(0, i_char);
-        i_char++;
-        setTimeout(taper, 100);
+    if (!isDeleting) {
+      if (charIndex <= fullText.length) {
+        textEl.textContent = fullText.substring(0, charIndex);
+        charIndex++;
+        setTimeout(taper, 75);
       } else {
-        supprime = true;
-        setTimeout(taper, 2000);
+        isDeleting = true;
+        setTimeout(taper, 2200);
       }
     } else {
-      if (i_char >= 0) {
-        el.textContent = mot.substring(0, i_char);
-        i_char--;
-        setTimeout(taper, 50);
+      if (charIndex >= 0) {
+        textEl.textContent = fullText.substring(0, charIndex);
+        charIndex--;
+        setTimeout(taper, 38);
       } else {
-        supprime = false;
-        i_mot = (i_mot + 1) % mots.length;
-        i_char = 0;
-        setTimeout(taper, 100);
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        const nextRole = roles[roleIndex];
+
+        if (prefixEl && prefixEl.textContent !== nextRole.prefix) {
+          prefixEl.style.opacity = "0.4";
+          setTimeout(() => {
+            prefixEl.textContent = nextRole.prefix;
+            prefixEl.style.opacity = "1";
+          }, 120);
+        }
+
+        charIndex = 0;
+        setTimeout(taper, 200);
       }
     }
   }
 
-  setTimeout(taper, 800);
+  setTimeout(taper, 2000);
 }
 
 // Formulaire de contact sécurisé
@@ -524,18 +528,44 @@ function initialiser_formulaire() {
       validerChamp(champMessage, "message"),
     );
 
-  // Soumission sécurisée avec Formspree
+  // Soumission sécurisée avec Formspree et Rate-Limiting persistant
   formulaire?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Protection anti-flood (cooldown 10s)
+    // 1. Rate-limiting persistant (cooldown 45 secondes via localStorage)
     const maintenant = Date.now();
-    if (maintenant - dernierEnvoi < 10000) {
-      const attente = Math.ceil((10000 - (maintenant - dernierEnvoi)) / 1000);
+    const CLE_DERNIER_ENVOI = "portfolio_contact_last_sent";
+    const CLE_HISTORIQUE = "portfolio_contact_history";
+
+    const dernierEnvoiStocke = parseInt(localStorage.getItem(CLE_DERNIER_ENVOI) || "0", 10);
+    const delaiEcoule = maintenant - dernierEnvoiStocke;
+    const TEMPS_ATTENTE = 45000; // 45 secondes
+
+    if (delaiEcoule < TEMPS_ATTENTE) {
+      const attenteSec = Math.ceil((TEMPS_ATTENTE - delaiEcoule) / 1000);
       if (msg_error) {
-        msg_error.textContent = `Veuillez patienter ${attente}s avant d'envoyer un autre message.`;
+        msg_error.textContent = `Protection anti-spam : veuillez patienter ${attenteSec}s avant un nouvel envoi.`;
         msg_error.classList.add("visible");
-        setTimeout(() => msg_error.classList.remove("visible"), 3000);
+        setTimeout(() => msg_error.classList.remove("visible"), 3500);
+      }
+      return;
+    }
+
+    // 2. Limite horaire (maximum 3 messages par heure)
+    let historique = [];
+    try {
+      historique = JSON.parse(localStorage.getItem(CLE_HISTORIQUE) || "[]");
+    } catch (_) {
+      historique = [];
+    }
+    const uneHeureAvant = maintenant - 3600000;
+    historique = historique.filter((t) => t > uneHeureAvant);
+
+    if (historique.length >= 3) {
+      if (msg_error) {
+        msg_error.textContent = "Limite d'envois atteinte (max 3/heure). Contactez-moi par email ou LinkedIn.";
+        msg_error.classList.add("visible");
+        setTimeout(() => msg_error.classList.remove("visible"), 4500);
       }
       return;
     }
@@ -594,6 +624,12 @@ function initialiser_formulaire() {
 
       if (response.ok) {
         dernierEnvoi = Date.now();
+        localStorage.setItem("portfolio_contact_last_sent", dernierEnvoi.toString());
+        try {
+          let hist = JSON.parse(localStorage.getItem("portfolio_contact_history") || "[]");
+          hist.push(dernierEnvoi);
+          localStorage.setItem("portfolio_contact_history", JSON.stringify(hist));
+        } catch (_) {}
         btn_envoyer.innerHTML = "✅ Message envoyé !";
         btn_envoyer.style.background =
           "linear-gradient(135deg,#22C55E,#16A34A)";
@@ -901,6 +937,8 @@ function initialiser_modal_certificats() {
     const title = carte.getAttribute("data-cert-title") || carte.querySelector(".cert_title")?.textContent.trim() || "Certification";
     const issuer = carte.getAttribute("data-cert-issuer") || carte.querySelector(".cert_issuer")?.textContent.trim() || "";
     const badge = carte.getAttribute("data-cert-badge") || carte.querySelector(".cert_badge")?.textContent.trim() || "Diplôme";
+    const certDate = carte.getAttribute("data-cert-date") || "";
+    const credlyUrl = carte.getAttribute("data-cert-credly") || "";
     const rawPdfUrl = carte.getAttribute("data-cert-pdf") || (carte.getAttribute("href") && carte.getAttribute("href") !== "#" ? carte.getAttribute("href") : "");
     const pdfUrl = rawPdfUrl ? encodeURI(rawPdfUrl) : "";
     const desc = carte.getAttribute("data-cert-desc") || "Attestation et validation officielle des compétences.";
@@ -909,6 +947,21 @@ function initialiser_modal_certificats() {
     if (titreEl) titreEl.textContent = title;
     if (emetteurEl) emetteurEl.textContent = issuer;
     if (badgeEl) badgeEl.textContent = badge;
+
+    const dateEl = document.getElementById("modal_cert_date");
+    if (dateEl) {
+      dateEl.textContent = certDate ? ("Date de délivrance / validation : " + certDate) : "";
+    }
+
+    const btnCredly = document.getElementById("modal_btn_credly");
+    if (btnCredly) {
+      if (credlyUrl && credlyUrl.trim() !== "") {
+        btnCredly.href = credlyUrl;
+        btnCredly.style.display = "inline-flex";
+      } else {
+        btnCredly.style.display = "none";
+      }
+    }
 
     if (pdfUrl && pdfUrl.toLowerCase().includes(".pdf")) {
       if (containerPdf) containerPdf.style.display = "flex";
@@ -1056,27 +1109,23 @@ filterBtns.forEach((btn) => {
 });
 
 // Animation des barres de compétences au scroll
+// Barres de progression retirées des compétences
 const skillBars = document.querySelectorAll(".skill_bar");
 const skillsSection = document.querySelector(".section_competences");
-
-const observerSkills = new IntersectionObserver(
-  (entries) => {
+if (skillBars.length > 0 && skillsSection) {
+  const observerSkills = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         skillBars.forEach((bar) => {
           const width = bar.getAttribute("data-width");
-          setTimeout(() => {
-            bar.style.width = width + "%";
-          }, 200);
+          if (width) bar.style.width = width + "%";
         });
         observerSkills.unobserve(entry.target);
       }
     });
-  },
-  { threshold: 0.2 },
-);
-
-if (skillsSection) observerSkills.observe(skillsSection);
+  }, { threshold: 0.2 });
+  observerSkills.observe(skillsSection);
+}
 
 // Filtres certifications
 const certFilterBtns = document.querySelectorAll(".cert_filter_btn");
@@ -1103,67 +1152,97 @@ certFilterBtns.forEach((btn) => {
 });
 
 /* ══════════════════════════════════════════════════════
-   CAROUSEL PROJETS — 6 par page (desktop) / scroll natif (mobile)
+   CAROUSEL PROJETS — Filtres (Académiques / Personnels) & Pagination
 ══════════════════════════════════════════════════════ */
 (function () {
   var grille = document.getElementById("grille_projets");
   var btnPrev = document.getElementById("btn_prev");
   var btnNext = document.getElementById("btn_next");
   var pagesContainer = document.getElementById("carousel_pages");
+  var filtres = document.querySelectorAll(".filtre_proj");
 
   if (!grille || !btnPrev || !btnNext || !pagesContainer) return;
 
   var PAR_PAGE = 6;
   var page = 0;
+  var catCourante = "tous";
 
   function isMobile() { return window.innerWidth <= 768; }
 
-  function cartes() { return Array.from(grille.querySelectorAll(".carte_projet")); }
+  function toutesCartes() {
+    return Array.from(grille.querySelectorAll(".carte_projet"));
+  }
 
-  function nbPages() { return Math.ceil(cartes().length / PAR_PAGE); }
+  function cartesFiltrees() {
+    return toutesCartes().filter(function (c) {
+      var cat = c.getAttribute("data-cat");
+      return catCourante === "tous" || cat === catCourante;
+    });
+  }
 
-  function allerPage(p, dir) {
-    if (isMobile()) return;
+  function nbPages() {
+    var nb = cartesFiltrees().length;
+    return Math.max(1, Math.ceil(nb / PAR_PAGE));
+  }
+
+  function afficherPage(p, dir) {
+    var cartesActives = cartesFiltrees();
     var total = nbPages();
     if (p < 0 || p >= total) return;
 
-    grille.style.transition = "opacity 0.28s ease, transform 0.28s ease";
+    if (isMobile()) {
+      toutesCartes().forEach(function (c) {
+        var cat = c.getAttribute("data-cat");
+        var visible = catCourante === "tous" || cat === catCourante;
+        c.classList.toggle("masquee", !visible);
+      });
+      pagesContainer.innerHTML = "";
+      return;
+    }
+
+    grille.style.transition = "opacity 0.25s ease, transform 0.25s ease";
     grille.style.opacity = "0";
-    grille.style.transform = dir === "next" ? "translateX(-28px)" : "translateX(28px)";
+    grille.style.transform = dir === "next" ? "translateX(-24px)" : (dir === "prev" ? "translateX(24px)" : "translateY(10px)");
 
     setTimeout(function () {
-      cartes().forEach(function (c, i) {
-        var debut = p * PAR_PAGE;
-        if (i >= debut && i < debut + PAR_PAGE) {
+      var debut = p * PAR_PAGE;
+      var fin = debut + PAR_PAGE;
+
+      toutesCartes().forEach(function (c) {
+        c.classList.add("masquee");
+      });
+
+      cartesActives.forEach(function (c, i) {
+        if (i >= debut && i < fin) {
           c.classList.remove("masquee");
-        } else {
-          c.classList.add("masquee");
         }
       });
 
       page = p;
       btnPrev.disabled = page === 0;
-      btnNext.disabled = page === total - 1;
+      btnNext.disabled = page >= total - 1 || total <= 1;
 
       pagesContainer.querySelectorAll(".page_indicateur").forEach(function (b, i) {
         b.classList.toggle("actif", i === page);
       });
 
       grille.style.transition = "none";
-      grille.style.transform = dir === "next" ? "translateX(28px)" : "translateX(-28px)";
+      grille.style.transform = dir === "next" ? "translateX(24px)" : (dir === "prev" ? "translateX(-24px)" : "translateY(-10px)");
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
-          grille.style.transition = "opacity 0.35s ease, transform 0.35s ease";
+          grille.style.transition = "opacity 0.3s ease, transform 0.3s ease";
           grille.style.opacity = "1";
-          grille.style.transform = "translateX(0)";
+          grille.style.transform = "translateX(0) translateY(0)";
         });
       });
-    }, 280);
+    }, 250);
   }
 
   function buildIndicateurs() {
     var total = nbPages();
     pagesContainer.innerHTML = "";
+    if (total <= 1) return;
+
     for (var i = 0; i < total; i++) {
       (function (idx) {
         var btn = document.createElement("button");
@@ -1171,45 +1250,42 @@ certFilterBtns.forEach((btn) => {
         btn.textContent = idx + 1;
         btn.setAttribute("aria-label", "Page " + (idx + 1));
         btn.addEventListener("click", function () {
-          allerPage(idx, idx > page ? "next" : "prev");
+          afficherPage(idx, idx > page ? "next" : "prev");
         });
         pagesContainer.appendChild(btn);
       })(i);
     }
   }
 
-  function init() {
-    if (isMobile()) {
-      cartes().forEach(function (c) { c.classList.remove("masquee"); });
-      pagesContainer.innerHTML = "";
-      grille.style.cssText = "";
-      return;
-    }
+  function actualiser() {
     buildIndicateurs();
-    cartes().forEach(function (c, i) {
-      if (i < PAR_PAGE) { c.classList.remove("masquee"); }
-      else { c.classList.add("masquee"); }
-    });
-    btnPrev.disabled = true;
-    btnNext.disabled = nbPages() <= 1;
-    grille.style.opacity = "1";
-    grille.style.transform = "translateX(0)";
+    page = 0;
+    afficherPage(0, "filter");
   }
 
-  btnNext.addEventListener("click", function () { allerPage(page + 1, "next"); });
-  btnPrev.addEventListener("click", function () { allerPage(page - 1, "prev"); });
+  // Écoute des filtres de catégories (Tous / Académiques / Personnels)
+  filtres.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      filtres.forEach(function (b) { b.classList.remove("actif_filtre_proj"); });
+      btn.classList.add("actif_filtre_proj");
+      catCourante = btn.getAttribute("data-cat") || "tous";
+      actualiser();
+    });
+  });
+
+  btnNext.addEventListener("click", function () { afficherPage(page + 1, "next"); });
+  btnPrev.addEventListener("click", function () { afficherPage(page - 1, "prev"); });
 
   var wasMobile = isMobile();
   window.addEventListener("resize", function () {
     var mobile = isMobile();
     if (mobile !== wasMobile) {
       wasMobile = mobile;
-      page = 0;
-      init();
+      actualiser();
     }
   });
 
-  init();
+  actualiser();
 })();
 
 /* ══════════════════════════════════════════════════════
@@ -1249,8 +1325,8 @@ function basculerVoteNow(version) {
       badge: "Projet Académique — L2 S3",
       titre: "Mon CV en ligne",
       contexte: "Cours de Développement Web 1 • Semestre 3 Licence 2 Informatique",
-      desc: "Conception, structuration sémantique et mise en forme responsive d'un Curriculum Vitae en ligne. Réalisé comme devoir académique pour valider la maîtrise des technologies fondamentales du web (HTML5 moderne, CSS3 adaptatif et dynamisme JavaScript). Déployé sur GitHub Pages.",
-      tags: ["HTML5", "CSS3", "JavaScript"],
+      desc: "Conception, structuration sémantique et mise en page responsive d'un Curriculum Vitae web interactif. Réalisé dans le respect strict des normes W3C pour valider la maîtrise des technologies fondamentales du web (HTML5 moderne, CSS3 adaptatif et dynamisme JavaScript). Déployé sur GitHub Pages.",
+      tags: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
       outils: ["GitHub Pages", "Responsive Design", "Git"],
       lien: "https://mhdlamine21.github.io/CV--Lamine/"
     },
@@ -1258,8 +1334,8 @@ function basculerVoteNow(version) {
       badge: "Projet Académique — L2 S3",
       titre: "BiblioTech",
       contexte: "Cours de Bases de Données Relationnelles (BDR) • Semestre 3 Licence 2",
-      desc: "Modélisation relationnelle complète (MCD, MLD, normalisation 3NF) et développement d'un système de gestion de bibliothèque universitaire : catalogue d'ouvrages, gestion des abonnés, suivi des prêts, relances et statistiques. Projet collaboratif documenté avec la suite Google Workspace.",
-      tags: ["HTML5", "CSS3", "JavaScript", "MySQL", "SQL"],
+      desc: "Modélisation relationnelle complète (MCD, MLD, normalisation 3NF) et développement d'un système de gestion de bibliothèque universitaire : catalogue d'ouvrages, gestion des abonnés, suivi des prêts, relances et statistiques. Projet collaboratif documenté et organisé avec la suite Google Workspace.",
+      tags: ["HTML5", "CSS3", "JavaScript", "Outils Google Workspace"],
       outils: ["Google Docs", "Google Sheets", "Google Sites", "Google Slides", "PhpMyAdmin"],
       lien: "https://drive.google.com/drive/folders/1VvykBnpclg-TdS8T_J0bPhU-JRSVrkG0?usp=drive_link"
     },
@@ -1300,13 +1376,13 @@ function basculerVoteNow(version) {
       lien: "https://github.com/mhdlamine21/E-tontine"
     },
     mywallet: {
-      badge: "Projet Académique & Avancé — L2 S4",
+      badge: "Projet Personnel & Ingénierie Backend",
       titre: "My Wallet",
-      contexte: "Inspiré de l'examen d'Analyse & Conception de Systèmes Orientés Objets (ACSOO)",
+      contexte: "Projet personnel approfondi • Analyse & Conception de Systèmes Orientés Objets (ACSOO)",
       desc: "Application robuste de portefeuille financier développée en Java avec Spring Boot. Comprend la gestion multi-comptes, les dépôts, retraits et virements inter-utilisateurs avec persistance transactionnelle Spring Data JPA, validation des règles métier strictes et exposition d'une API REST.",
       tags: ["Spring Boot", "Java", "JPA / Hibernate", "MySQL", "API REST"],
       outils: ["Maven", "Spring Data", "Transactions ACID", "Postman"],
-      lien: "https://github.com/mhdlamine21"
+      lien: "https://github.com/mhdlamine21/MyWallet"
     },
     voicelingo: {
       badge: "Projet Personnel & IA",
@@ -1327,9 +1403,9 @@ function basculerVoteNow(version) {
       lien: "https://github.com/mhdlamine21/SyLOC-T"
     },
     codezone: {
-      badge: "Projet Communautaire & Personnel",
-      titre: "CodeZone (CodeZoneSN)",
-      contexte: "Plateforme communautaire pour étudiants en informatique au Sénégal",
+      badge: "Projet Personnel & Communautaire",
+      titre: "CodeZoneSN",
+      contexte: "Initiative personnelle • Plateforme communautaire pour étudiants en informatique au Sénégal",
       desc: "Espace personnel et communautaire conçu pour vulgariser l'informatique, partager des retours d'expérience, des cours universitaires, des fiches pratiques et de la veille technologique pour la jeunesse sénégalaise et africaine passionnée de développement logiciel.",
       tags: ["Plateforme Tech", "Blog Étudiant", "Veille Technologique", "Communauté"],
       outils: ["Partage Open Source", "Pédagogie", "Mentorat"],
@@ -1351,6 +1427,8 @@ function basculerVoteNow(version) {
     document.getElementById("modal_proj_titre").textContent = p.titre;
     document.getElementById("modal_proj_contexte").textContent = p.contexte;
     document.getElementById("modal_proj_desc").textContent = p.desc;
+    var ctxDetail = document.getElementById("modal_proj_contexte_detail");
+    if (ctxDetail) ctxDetail.textContent = p.contexte;
 
     var tagsCont = document.getElementById("modal_proj_tags");
     tagsCont.innerHTML = "";
