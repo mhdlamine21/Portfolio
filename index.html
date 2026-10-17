@@ -124,18 +124,33 @@
             <h1 class="hero_nom">Mouhamadou Lamine Niang</h1>
 
             <p class="hero_role">
-              Étudiant en
-              <span class="role_accent" id="texte_anime">Génie Logiciel</span>
+              <span id="prefixe_anime">Étudiant en</span>
+              <span class="role_accent" id="texte_anime">Génie Logiciel</span
+              ><span
+                class="curseur_typewriter"
+                id="curseur_texte"
+                aria-hidden="true"
+              ></span>
             </p>
 
-            <p class="hero_universite">Université Iba Der Thiam de Thiès 🇸🇳</p>
+            <p class="hero_universite">
+              <a
+                href="https://www.uidt.sn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hero_universite_lien"
+                >Université Iba Der Thiam de Thiès 🇸🇳</a
+              >
+            </p>
 
             <p class="hero_bio">
-              Passionné d'ingénierie logicielle et de systèmes d'information
-              depuis mes premières lignes de code, je m'intéresse à la
-              conception de solutions numériques robustes et utiles. Je souhaite
-              contribuer au développement technologique du Sénégal et de
-              l'Afrique à travers des projets concrets.
+              Étudiant en 3e année de Licence Informatique (option Génie
+              Logiciel) à l’Université Iba Der Thiam de Thiès et Développeur
+              Backend (Spring Boot, Django, Node.JS, Laravel). Passionné par
+              l’ingénierie logicielle, les systèmes d’information et les
+              technologies cloud, je conçois et déploie des solutions numériques
+              robustes, sécurisées et évolutives, avec pour objectif de devenir
+              ingénieur DevOps / Cloud.
             </p>
 
             <div class="hero_boutons">
@@ -222,44 +237,110 @@
 
                 <!-- Planètes 3D animées en temps réel -->
                 <!-- Orbite 1 (Intérieure - Rapide) -->
-                <div class="planet_3d_node" id="planet_terminal" data-orbit="1" data-speed="0.035" data-angle="0">
+                <div
+                  class="planet_3d_node"
+                  id="planet_terminal"
+                  data-orbit="1"
+                  data-speed="0.035"
+                  data-angle="0"
+                >
                   <div class="planet_3d" title="Terminal & Console">
                     <div class="planet_glow"></div>
-                    <img src="images/icons/terminal.svg" alt="Terminal" width="22" height="22" />
+                    <img
+                      src="images/icons/terminal.svg"
+                      alt="Terminal"
+                      width="22"
+                      height="22"
+                    />
                   </div>
                 </div>
 
                 <!-- Orbite 2 (Moyenne - Double planète) -->
-                <div class="planet_3d_node" id="planet_server" data-orbit="2" data-speed="-0.022" data-angle="0">
+                <div
+                  class="planet_3d_node"
+                  id="planet_server"
+                  data-orbit="2"
+                  data-speed="-0.022"
+                  data-angle="0"
+                >
                   <div class="planet_3d" title="Serveur & Back-end">
                     <div class="planet_glow"></div>
-                    <img src="images/icons/server.svg" alt="Serveur" width="22" height="22" />
+                    <img
+                      src="images/icons/server.svg"
+                      alt="Serveur"
+                      width="22"
+                      height="22"
+                    />
                   </div>
                 </div>
-                <div class="planet_3d_node" id="planet_api" data-orbit="2" data-speed="-0.022" data-angle="180">
+                <div
+                  class="planet_3d_node"
+                  id="planet_api"
+                  data-orbit="2"
+                  data-speed="-0.022"
+                  data-angle="180"
+                >
                   <div class="planet_3d" title="API & Intégration">
                     <div class="planet_glow"></div>
-                    <img src="images/icons/plug.svg" alt="API" width="22" height="22" />
+                    <img
+                      src="images/icons/plug.svg"
+                      alt="API"
+                      width="22"
+                      height="22"
+                    />
                   </div>
                 </div>
 
                 <!-- Orbite 3 (Extérieure - Triple planète) -->
-                <div class="planet_3d_node" id="planet_laptop" data-orbit="3" data-speed="0.014" data-angle="0">
+                <div
+                  class="planet_3d_node"
+                  id="planet_laptop"
+                  data-orbit="3"
+                  data-speed="0.014"
+                  data-angle="0"
+                >
                   <div class="planet_3d" title="Développement & Conception">
                     <div class="planet_glow"></div>
-                    <img src="images/icons/laptop.svg" alt="Ordinateur" width="22" height="22" />
+                    <img
+                      src="images/icons/laptop.svg"
+                      alt="Ordinateur"
+                      width="22"
+                      height="22"
+                    />
                   </div>
                 </div>
-                <div class="planet_3d_node" id="planet_db" data-orbit="3" data-speed="0.014" data-angle="120">
+                <div
+                  class="planet_3d_node"
+                  id="planet_db"
+                  data-orbit="3"
+                  data-speed="0.014"
+                  data-angle="120"
+                >
                   <div class="planet_3d" title="Bases de données & SQL">
                     <div class="planet_glow"></div>
-                    <img src="images/icons/database.svg" alt="Database" width="22" height="22" />
+                    <img
+                      src="images/icons/database.svg"
+                      alt="Database"
+                      width="22"
+                      height="22"
+                    />
                   </div>
                 </div>
-                <div class="planet_3d_node" id="planet_braces" data-orbit="3" data-speed="0.014" data-angle="240">
+                <div
+                  class="planet_3d_node"
+                  id="planet_braces"
+                  data-orbit="3"
+                  data-speed="0.014"
+                  data-angle="240"
+                >
                   <div class="planet_3d" title="Algorithmique & Code">
                     <div class="planet_glow"></div>
-                    <img src="images/icons/braces.svg" alt="Braces" width="22" height="22" />
+                    <img
+                      src="images/icons/braces.svg"
+                      alt="Braces"
+                      width="22"
+                      height="22"
+                    />
                   </div>
                 </div>
 
@@ -330,7 +411,9 @@
 
               <!-- Nom et rôle -->
               <h3 class="card_nom">Mouhamadou Lamine Niang</h3>
-              <p class="card_role">Étudiant en Génie Logiciel</p>
+              <p class="card_role">
+                Software Engineering Student & Backend Developer
+              </p>
 
               <!-- Tags -->
               <div class="card_tags">
@@ -385,14 +468,15 @@
                   </div>
                   <div class="timeline_content">
                     <p>
-                      Je suis étudiant en
+                      Étudiant en 3ᵉ année de Licence Informatique, option
+                      <strong>Génie Logiciel</strong>, à
                       <a
-                        href="http://www.univ-thies.sn"
+                        href="https://www.uidt.sn/"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="lien_accent"
-                        >3ᵉ année de licence Informatique</a
-                      >, option <strong>Génie Logiciel</strong>, à l'Université
-                      Iba Der Thiam de Thiès.
+                        >l'Université Iba Der Thiam de Thiès</a
+                      >.
                     </p>
                   </div>
                 </div>
@@ -408,12 +492,12 @@
                   </div>
                   <div class="timeline_content">
                     <p>
-                      Mon parcours m'a permis de développer des compétences
-                      solides en programmation orientée objet, en bases de
-                      données relationnelles, en systèmes d'information et en
-                      développement web. J'explore également le développement
-                      mobile et les architectures logicielles dans le cadre de
-                      mes projets académiques et personnels.
+                      <strong>Développeur Backend</strong> : conception et
+                      développement d'APIs REST modulaires, sécurisées et
+                      performantes avec
+                      <strong>Spring Boot, Django, Node.JS et Laravel</strong>,
+                      adossées à une modélisation rigoureuse des bases de
+                      données relationnelles (SQL, MySQL, PostgreSQL).
                     </p>
                   </div>
                 </div>
@@ -421,7 +505,7 @@
                 <div class="timeline_item">
                   <div class="timeline_icon">
                     <img
-                      src="images/icons/goal.svg"
+                      src="images/icons/cloud.svg"
                       alt=""
                       width="18"
                       height="18"
@@ -429,12 +513,14 @@
                   </div>
                   <div class="timeline_content">
                     <p>
-                      Je crois que la technologie peut transformer l'Afrique, et
-                      je souhaite y contribuer à travers des solutions
-                      logicielles robustes et bien conçues.
+                      <strong>Compétences Cloud-Native & DevOps</strong> :
+                      conteneurisation Docker, pipelines CI/CD (GitHub Actions,
+                      GitLab), environnement Linux et sensibilisation certifiée
+                      en réseaux (Cisco) et cybersécurité (Cisco).
                     </p>
                   </div>
                 </div>
+
                 <div class="timeline_item">
                   <div class="timeline_icon">
                     <img
@@ -446,8 +532,9 @@
                   </div>
                   <div class="timeline_content">
                     <p>
-                      Fondateur de <strong>CodeZoneSN</strong>, un blog pour les
-                      étudiants en informatique au Sénégal.
+                      Fondateur de <strong>CodeZoneSN</strong>, une communauté
+                      et plateforme d'entraide technologique, de ressources et
+                      de tutoriels pour les passionés de la Tech.
                     </p>
                   </div>
                 </div>
@@ -455,7 +542,7 @@
                 <div class="timeline_item">
                   <div class="timeline_icon">
                     <img
-                      src="images/icons/fusée.svg"
+                      src="images/icons/fusee.svg"
                       alt=""
                       width="18"
                       height="18"
@@ -463,9 +550,11 @@
                   </div>
                   <div class="timeline_content">
                     <p>
-                      Mon objectif : renforcer mes compétences techniques à
-                      travers des projets concrets et m'orienter vers
-                      l'ingénierie logicielle avancée.
+                      <strong>Objectif professionnel</strong> : devenir
+                      <strong>ingénieur DevOps / Cloud</strong> avec une
+                      ouverture vers la recherche et l’enseignement, tout en
+                      concevant des architectures résilientes et hautement
+                      disponibles.
                     </p>
                   </div>
                 </div>
@@ -577,15 +666,8 @@
                   <span class="skill_name">HTML5</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="90">90%</span>
+                  <span class="skill_level niveau_avance">Avancé</span>
                   <span class="skill_label">Front-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="90"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -603,15 +685,8 @@
                   <span class="skill_name">CSS3</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="85">85%</span>
+                  <span class="skill_level niveau_avance">Avancé</span>
                   <span class="skill_label">Front-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="85"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -629,15 +704,10 @@
                   <span class="skill_name">JavaScript</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="85">85%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">Front-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="85"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -655,15 +725,10 @@
                   <span class="skill_name">PHP</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="70">70%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">Back-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="70"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -681,15 +746,10 @@
                   <span class="skill_name">Python</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="72">72%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">Back-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="72"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -707,15 +767,8 @@
                   <span class="skill_name">Java</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="68">68%</span>
+                  <span class="skill_level niveau_avance">Avancé</span>
                   <span class="skill_label">Back-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="68"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -733,15 +786,10 @@
                   <span class="skill_name">Spring Boot</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="30">30%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">Back-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="30"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -759,15 +807,10 @@
                   <span class="skill_name">Langage C</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="75">75%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">Back-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="75"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -785,15 +828,8 @@
                   <span class="skill_name">SQL</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="80">80%</span>
+                  <span class="skill_level niveau_avance">Avancé</span>
                   <span class="skill_label">Bases de données</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="80"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -811,15 +847,8 @@
                   <span class="skill_name">MySQL</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="78">78%</span>
+                  <span class="skill_level niveau_avance">Avancé</span>
                   <span class="skill_label">Bases de données</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="78"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -837,15 +866,10 @@
                   <span class="skill_name">Git</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="82">82%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">DevOps & Outils</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="82"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -863,15 +887,10 @@
                   <span class="skill_name">Figma</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="65">65%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">DevOps & Outils</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="65"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -889,15 +908,8 @@
                   <span class="skill_name">Flutter</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="65">65%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">Mobile</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="65"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -915,15 +927,8 @@
                   <span class="skill_name">Dart</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="60">60%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">Mobile</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="60"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -941,15 +946,10 @@
                   <span class="skill_name">React</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="25">25%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">Front-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="25"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -967,15 +967,10 @@
                   <span class="skill_name">TypeScript</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="40">40%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">Front-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="40"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -993,15 +988,10 @@
                   <span class="skill_name">Tailwind CSS</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="60">60%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">Front-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="60"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1019,15 +1009,8 @@
                   <span class="skill_name">Next.js</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="20">20%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">Front-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="20"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1045,15 +1028,8 @@
                   <span class="skill_name">Laravel</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="25">25%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">Back-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="25"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1071,15 +1047,8 @@
                   <span class="skill_name">Node.js</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="25">25%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">Back-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="25"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1097,15 +1066,8 @@
                   <span class="skill_name">Express</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="25">25%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">Back-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="25"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1123,15 +1085,8 @@
                   <span class="skill_name">LISP</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="20">20%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">Back-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="20"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1149,15 +1104,10 @@
                   <span class="skill_name">XML</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="40">40%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">Back-end</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="40"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1175,15 +1125,8 @@
                   <span class="skill_name">PostgreSQL</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="15">15%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">Bases de données</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="15"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1201,15 +1144,8 @@
                   <span class="skill_name">Redis</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="20">20%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">Bases de données</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="20"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1227,15 +1163,10 @@
                   <span class="skill_name">Linux</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="50">50%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">DevOps & Outils</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="50"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1253,15 +1184,8 @@
                   <span class="skill_name">Docker</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="50">50%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">DevOps & Outils</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="50"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1279,41 +1203,8 @@
                   <span class="skill_name">GitHub Actions</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="30">30%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">DevOps & Outils</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="30"
-                    style="width: 0%"
-                  ></div>
-                </div>
-              </div>
-
-              <!-- Jenkins -->
-              <div class="skill_card" data-category="devops">
-                <div class="skill_header">
-                  <div class="skill_icon">
-                    <img
-                      src="images/icons/jenkins.svg"
-                      alt="Jenkins"
-                      width="24"
-                      height="24"
-                    />
-                  </div>
-                  <span class="skill_name">Jenkins</span>
-                </div>
-                <div class="skill_stats">
-                  <span class="skill_percent" data-percent="10">10%</span>
-                  <span class="skill_label">DevOps & Outils</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="10"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1331,15 +1222,8 @@
                   <span class="skill_name">Jira</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="30">30%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">DevOps & Outils</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="30"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1357,15 +1241,8 @@
                   <span class="skill_name">GitLab</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="15">15%</span>
+                  <span class="skill_level niveau_debutant">Débutant</span>
                   <span class="skill_label">DevOps & Outils</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="15"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1383,15 +1260,10 @@
                   <span class="skill_name">Bases en Réseaux</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="60">60%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">Réseaux & Sécurité</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="60"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
 
@@ -1409,15 +1281,10 @@
                   <span class="skill_name">Bases en Sécurité</span>
                 </div>
                 <div class="skill_stats">
-                  <span class="skill_percent" data-percent="60">60%</span>
+                  <span class="skill_level niveau_intermediaire"
+                    >Intermédiaire</span
+                  >
                   <span class="skill_label">Réseaux & Sécurité</span>
-                </div>
-                <div class="skill_bar_container">
-                  <div
-                    class="skill_bar"
-                    data-width="60"
-                    style="width: 0%"
-                  ></div>
                 </div>
               </div>
             </div>
@@ -1438,7 +1305,9 @@
                 </div>
                 <h3 style="margin: 0">Certifications / Diplômes</h3>
               </div>
-              <p>Mes attestations et diplômes obtenus (avec documents officiels)</p>
+              <p>
+                Mes attestations et diplômes obtenus (avec documents officiels)
+              </p>
             </div>
 
             <!-- Filtres certifications -->
@@ -1455,19 +1324,25 @@
               <button class="cert_filter_btn" data-cert-filter="securite">
                 Sécurité
               </button>
+              <button class="cert_filter_btn" data-cert-filter="systeme">
+                Système & Cloud
+              </button>
             </div>
 
             <!-- Liste certifications avec lecteur modal -->
             <div class="certifications_grid">
+              <!-- Certificat 1 : Cisco Networking Basics -->
               <a
                 href="documents/certificats/Networking_Basics_certificate_mouhamedlniang-gmail-com_f7811de6-713b-43cf-9e37-0dbfb00ee123.pdf"
                 class="cert_card"
                 data-cert-category="reseau"
                 data-cert-title="Networking Basics"
                 data-cert-issuer="Cisco Networking Academy"
+                data-cert-date="23/05/2026"
                 data-cert-badge="Réseau"
+                data-cert-credly="https://www.credly.com/badges/0de83a70-bfc2-4c38-8ccd-10ae2633acc2/linked_in_profile"
                 data-cert-pdf="documents/certificats/Networking_Basics_certificate_mouhamedlniang-gmail-com_f7811de6-713b-43cf-9e37-0dbfb00ee123.pdf"
-                data-cert-desc="Certification officielle attestant des compétences en principes fondamentaux des réseaux, protocoles IP, routage, commutation et configuration de base."
+                data-cert-desc="Certification officielle Cisco attestant des compétences en principes fondamentaux des réseaux, protocoles IPv4/IPv6, routage, commutation et configuration d'équipements."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -1481,7 +1356,22 @@
                 </div>
                 <div class="cert_info">
                   <div class="cert_title">Networking Basics</div>
-                  <div class="cert_issuer">Cisco Networking Academy</div>
+                  <div class="cert_meta">
+                    <span class="cert_issuer">Cisco Networking Academy</span>
+                    <span class="cert_separateur">•</span>
+                    <span class="cert_date">23/05/2026</span>
+                  </div>
+                  <span class="badge_verifie_credly">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Vérifié Credly
+                  </span>
                 </div>
                 <div class="cert_badge">Réseau</div>
                 <div class="cert_arrow">
@@ -1498,13 +1388,16 @@
                 </div>
               </a>
 
+              <!-- Certificat 2 : Fortinet NSE 1 -->
               <a
                 href="documents/certificats/Certificat_NSE_1.pdf"
                 class="cert_card"
                 data-cert-category="securite"
                 data-cert-title="NSE 1 - Information Security Awareness"
                 data-cert-issuer="Fortinet Training Institute"
+                data-cert-date="24/05/2026"
                 data-cert-badge="Sécurité"
+                data-cert-credly=""
                 data-cert-pdf="documents/certificats/Certificat_NSE_1.pdf"
                 data-cert-desc="Formation et certification en cybersécurité couvrant la sensibilisation aux menaces numériques, l'ingénierie sociale, la protection des données et les attaques réseau."
                 target="_blank"
@@ -1519,8 +1412,128 @@
                   />
                 </div>
                 <div class="cert_info">
-                  <div class="cert_title">NSE 1 - Information Security Awareness</div>
-                  <div class="cert_issuer">Fortinet Training Institute</div>
+                  <div class="cert_title">
+                    NSE 1 - Information Security Awareness
+                  </div>
+                  <div class="cert_meta">
+                    <span class="cert_issuer">Fortinet Training Institute</span>
+                    <span class="cert_separateur">•</span>
+                    <span class="cert_date">24/05/2026</span>
+                  </div>
+                </div>
+                <div class="cert_badge">Sécurité</div>
+                <div class="cert_arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+              </a>
+
+              <!-- Certificat 3 : The Linux Foundation -->
+              <a
+                href="documents/certificats/Linux Foundation.pdf"
+                class="cert_card"
+                data-cert-category="systeme"
+                data-cert-title="The Linux Foundation"
+                data-cert-issuer="The Linux Foundation"
+                data-cert-date="09/10/2026"
+                data-cert-badge="Système & Cloud"
+                data-cert-credly="https://www.credly.com/badges/b7ddfd0e-269e-4ff6-831d-b6a4a2503aa3/linked_in_profile"
+                data-cert-pdf="documents/certificats/Linux Foundation.pdf"
+                data-cert-desc="Attestation officielle The Linux Foundation validant les compétences essentielles sur le système d'exploitation Linux, les commandes shell, l'administration système et les environnements open source."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="cert_icon">
+                  <img
+                    src="images/icons/linux.svg"
+                    alt="Linux"
+                    width="24"
+                    height="24"
+                  />
+                </div>
+                <div class="cert_info">
+                  <div class="cert_title">The Linux Foundation</div>
+                  <div class="cert_meta">
+                    <span class="cert_issuer">The Linux Foundation</span>
+                    <span class="cert_separateur">•</span>
+                    <span class="cert_date">09/10/2026</span>
+                  </div>
+                  <span class="badge_verifie_credly">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Vérifié Credly
+                  </span>
+                </div>
+                <div class="cert_badge">Système & Cloud</div>
+                <div class="cert_arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+              </a>
+
+              <!-- Certificat 4 : Cisco Introduction to Cybersecurity -->
+              <a
+                href="documents/certificats/Introduction to Cybersecurty.pdf"
+                class="cert_card"
+                data-cert-category="securite"
+                data-cert-title="Introduction to Cybersecurity"
+                data-cert-issuer="Cisco Networking Academy"
+                data-cert-date="11/10/2026"
+                data-cert-badge="Sécurité"
+                data-cert-credly="https://www.credly.com/badges/5fd12674-698f-4d02-85fb-9f890b7a5d14/linked_in_profile"
+                data-cert-pdf="documents/certificats/Introduction to Cybersecurty.pdf"
+                data-cert-desc="Certification Cisco couvrant la protection des données, les principes fondamentaux de la cybersécurité, les menaces globales et les stratégies d'intégrité réseau."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="cert_icon">
+                  <img
+                    src="images/icons/shield.svg"
+                    alt="Sécurité"
+                    width="24"
+                    height="24"
+                  />
+                </div>
+                <div class="cert_info">
+                  <div class="cert_title">Introduction to Cybersecurity</div>
+                  <div class="cert_meta">
+                    <span class="cert_issuer">Cisco Networking Academy</span>
+                    <span class="cert_separateur">•</span>
+                    <span class="cert_date">11/10/2026</span>
+                  </div>
+                  <span class="badge_verifie_credly">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Vérifié Credly
+                  </span>
                 </div>
                 <div class="cert_badge">Sécurité</div>
                 <div class="cert_arrow">
@@ -1549,20 +1562,47 @@
             <h2>Projets <span class="accent_titre">réalisés</span></h2>
           </div>
 
+          <div class="filtres_projets reveler">
+            <button
+              type="button"
+              class="filtre_proj actif_filtre_proj"
+              data-cat="tous"
+            >
+              Tous les projets (10)
+            </button>
+            <button type="button" class="filtre_proj" data-cat="academique">
+              Projets Académiques (7)
+            </button>
+            <button type="button" class="filtre_proj" data-cat="personnel">
+              Projets Personnels (3)
+            </button>
+          </div>
+
           <div class="carousel_projets_wrapper" id="carousel_projets_wrapper">
-                        <div class="grille_projets" id="grille_projets">
-<article class="carte_projet projet_deux reveler" data-projet-id="codezone">
+            <div class="grille_projets" id="grille_projets">
+              <article
+                class="carte_projet projet_deux reveler"
+                data-projet-id="codezone"
+                data-cat="personnel"
+              >
                 <div class="barre_projet"></div>
                 <div class="projet_entete">
                   <div class="projet_badge badge_deux">10</div>
                   <div class="projet_logo">
-                    <img src="images/projects/codezonesn.svg" alt="CodeZoneSN" />
+                    <img
+                      src="images/projects/codezonesn/logo.svg"
+                      alt="CodeZoneSN"
+                    />
                   </div>
                 </div>
-                <h3 class="projet_titre">CodeZone</h3>
+                <span class="badge_cat_projet badge_personnel"
+                  >Projet Personnel</span
+                >
+                <h3 class="projet_titre">CodeZoneSN</h3>
                 <p class="projet_description">
                   Blog et plateforme communautaire pour étudiants et passionnés
-                  d'informatique au Sénégal : partage de ressources et veille tech.
+                  d'informatique au Sénégal : partage de ressources et veille
+                  tech.
                 </p>
                 <div class="projet_technologies">
                   <span class="tech_etiquette">Blog</span>
@@ -1570,26 +1610,49 @@
                   <span class="tech_etiquette">Tutoriels</span>
                 </div>
                 <div class="projet_actions">
-                  <button type="button" class="btn_projet_details" data-projet="codezone">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <button
+                    type="button"
+                    class="btn_projet_details"
+                    data-projet="codezone"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="16" x2="12" y2="12" />
+                      <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
                     Contexte
                   </button>
                   <span class="projet_lien_attente">Déploiement bientôt</span>
                 </div>
               </article>
 
-<article class="carte_projet projet_trois reveler" data-projet-id="syloct">
+              <article
+                class="carte_projet projet_trois reveler"
+                data-projet-id="syloct"
+                data-cat="academique"
+              >
                 <div class="barre_projet"></div>
                 <div class="projet_entete">
                   <div class="projet_badge badge_trois">09</div>
                   <div class="projet_logo">
-                    <img src="images/projects/syloct.svg" alt="SyLOC-T" />
+                    <img src="images/projects/syloct/logo.svg" alt="SyLOC-T" />
                   </div>
                 </div>
+                <span class="badge_cat_projet badge_academique"
+                  >Projet Académique</span
+                >
                 <h3 class="projet_titre">SyLOC-T</h3>
                 <p class="projet_description">
-                  Système intelligent de localisation et de gestion des navettes de
-                  transport universitaire avec suivi temps réel et API REST.
+                  Système intelligent de localisation et de gestion des navettes
+                  de transport universitaire avec suivi temps réel et API REST.
                 </p>
                 <div class="projet_technologies">
                   <span class="tech_etiquette">React</span>
@@ -1598,8 +1661,24 @@
                   <span class="tech_etiquette">MySQL</span>
                 </div>
                 <div class="projet_actions">
-                  <button type="button" class="btn_projet_details" data-projet="syloct">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <button
+                    type="button"
+                    class="btn_projet_details"
+                    data-projet="syloct"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="16" x2="12" y2="12" />
+                      <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
                     Contexte
                   </button>
                   <a
@@ -1609,23 +1688,48 @@
                     class="projet_lien"
                   >
                     Voir le projet
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
                   </a>
                 </div>
               </article>
 
-<article class="carte_projet projet_un reveler" data-projet-id="voicelingo">
+              <article
+                class="carte_projet projet_un reveler"
+                data-projet-id="voicelingo"
+                data-cat="personnel"
+              >
                 <div class="barre_projet"></div>
                 <div class="projet_entete">
                   <div class="projet_badge badge_un">08</div>
                   <div class="projet_logo">
-                    <img src="images/projects/voicelingo.svg" alt="VoiceLingo" />
+                    <img
+                      src="images/projects/voicelingo/logo.svg"
+                      alt="VoiceLingo"
+                    />
                   </div>
                 </div>
+                <span class="badge_cat_projet badge_personnel"
+                  >Projet Personnel</span
+                >
                 <h3 class="projet_titre">VoiceLingo</h3>
                 <p class="projet_description">
-                  Transcription vocale automatisée, traduction contextuelle assistée par
-                  IA et doublage audio de vidéos pédagogiques multilingues.
+                  Transcription vocale automatisée, traduction contextuelle
+                  assistée par IA et doublage audio de vidéos pédagogiques
+                  multilingues.
                 </p>
                 <div class="projet_technologies">
                   <span class="tech_etiquette">Python</span>
@@ -1634,8 +1738,24 @@
                   <span class="tech_etiquette">FFmpeg</span>
                 </div>
                 <div class="projet_actions">
-                  <button type="button" class="btn_projet_details" data-projet="voicelingo">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <button
+                    type="button"
+                    class="btn_projet_details"
+                    data-projet="voicelingo"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="16" x2="12" y2="12" />
+                      <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
                     Contexte
                   </button>
                   <a
@@ -1645,23 +1765,48 @@
                     class="projet_lien"
                   >
                     Voir le projet
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
                   </a>
                 </div>
               </article>
 
-<article class="carte_projet projet_trois reveler" data-projet-id="mywallet">
+              <article
+                class="carte_projet projet_trois reveler"
+                data-projet-id="mywallet"
+                data-cat="personnel"
+              >
                 <div class="barre_projet"></div>
                 <div class="projet_entete">
                   <div class="projet_badge badge_trois">07</div>
                   <div class="projet_logo">
-                    <img src="images/projects/mywallet.svg" alt="My Wallet" />
+                    <img
+                      src="images/projects/mywallet/logo.svg"
+                      alt="My Wallet"
+                    />
                   </div>
                 </div>
+                <span class="badge_cat_projet badge_personnel"
+                  >Projet Personnel</span
+                >
                 <h3 class="projet_titre">My Wallet</h3>
                 <p class="projet_description">
                   Portefeuille financier backend développé avec Spring Boot :
-                  gestion des comptes, soldes, transferts et sécurisation des opérations.
+                  gestion des comptes, soldes, transferts et sécurisation des
+                  opérations.
                 </p>
                 <div class="projet_technologies">
                   <span class="tech_etiquette">Spring Boot</span>
@@ -1670,8 +1815,24 @@
                   <span class="tech_etiquette">MySQL</span>
                 </div>
                 <div class="projet_actions">
-                  <button type="button" class="btn_projet_details" data-projet="mywallet">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <button
+                    type="button"
+                    class="btn_projet_details"
+                    data-projet="mywallet"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="16" x2="12" y2="12" />
+                      <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
                     Contexte
                   </button>
                   <a
@@ -1681,23 +1842,48 @@
                     class="projet_lien"
                   >
                     Voir le projet
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
                   </a>
                 </div>
               </article>
 
-<article class="carte_projet projet_un reveler" data-projet-id="etontine">
+              <article
+                class="carte_projet projet_un reveler"
+                data-projet-id="etontine"
+                data-cat="academique"
+              >
                 <div class="barre_projet"></div>
                 <div class="projet_entete">
                   <div class="projet_badge badge_un">06</div>
                   <div class="projet_logo">
-                    <img src="images/projects/e-tontine.svg" alt="E-Tontine" />
+                    <img
+                      src="images/projects/e-tontine/logo.svg"
+                      alt="E-Tontine"
+                    />
                   </div>
                 </div>
+                <span class="badge_cat_projet badge_academique"
+                  >Projet Académique</span
+                >
                 <h3 class="projet_titre">E-Tontine</h3>
                 <p class="projet_description">
-                  Plateforme digitale de gestion de tontines en ligne : cotisations,
-                  cycles de paiement transparents et suivi des adhérents.
+                  Plateforme digitale de gestion de tontines en ligne :
+                  cotisations, cycles de paiement transparents et suivi des
+                  adhérents.
                 </p>
                 <div class="projet_technologies">
                   <span class="tech_etiquette">PHP</span>
@@ -1705,8 +1891,24 @@
                   <span class="tech_etiquette">Bootstrap</span>
                 </div>
                 <div class="projet_actions">
-                  <button type="button" class="btn_projet_details" data-projet="etontine">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <button
+                    type="button"
+                    class="btn_projet_details"
+                    data-projet="etontine"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="16" x2="12" y2="12" />
+                      <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
                     Contexte
                   </button>
                   <a
@@ -1716,23 +1918,48 @@
                     class="projet_lien"
                   >
                     Voir le projet
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
                   </a>
                 </div>
               </article>
 
-<article class="carte_projet projet_cinq reveler" data-projet-id="univ_scheduler">
+              <article
+                class="carte_projet projet_cinq reveler"
+                data-projet-id="univ_scheduler"
+                data-cat="academique"
+              >
                 <div class="barre_projet"></div>
                 <div class="projet_entete">
                   <div class="projet_badge badge_cinq">05</div>
                   <div class="projet_logo">
-                    <img src="images/projects/univ-scheduler.svg" alt="Univ-Scheduler" />
+                    <img
+                      src="images/projects/univ-scheduler/logo.svg"
+                      alt="Univ-Scheduler"
+                    />
                   </div>
                 </div>
+                <span class="badge_cat_projet badge_academique"
+                  >Projet Académique</span
+                >
                 <h3 class="projet_titre">Univ-Scheduler</h3>
                 <p class="projet_description">
-                  Planification intelligente des emplois du temps universitaires,
-                  gestion des occupations et résolution automatisée des conflits de salles.
+                  Planification intelligente des emplois du temps
+                  universitaires, gestion des occupations et résolution
+                  automatisée des conflits de salles.
                 </p>
                 <div class="projet_technologies">
                   <span class="tech_etiquette">Java</span>
@@ -1740,8 +1967,24 @@
                   <span class="tech_etiquette">SQLite</span>
                 </div>
                 <div class="projet_actions">
-                  <button type="button" class="btn_projet_details" data-projet="univ_scheduler">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <button
+                    type="button"
+                    class="btn_projet_details"
+                    data-projet="univ_scheduler"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="16" x2="12" y2="12" />
+                      <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
                     Contexte
                   </button>
                   <a
@@ -1751,23 +1994,48 @@
                     class="projet_lien"
                   >
                     Voir le projet
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
                   </a>
                 </div>
               </article>
 
-<article class="carte_projet projet_deux reveler" data-projet-id="university_systeme">
+              <article
+                class="carte_projet projet_deux reveler"
+                data-projet-id="university_systeme"
+                data-cat="academique"
+              >
                 <div class="barre_projet"></div>
                 <div class="projet_entete">
                   <div class="projet_badge badge_deux">04</div>
                   <div class="projet_logo">
-                    <img src="images/projects/university_system.svg" alt="University Système" />
+                    <img
+                      src="images/projects/university_system/logo.svg"
+                      alt="University Système"
+                    />
                   </div>
                 </div>
+                <span class="badge_cat_projet badge_academique"
+                  >Projet Académique</span
+                >
                 <h3 class="projet_titre">University Système</h3>
                 <p class="projet_description">
                   Architectures orientées services (SOA) et interopérabilité de
-                  services web SOAP/WSDL basés sur des schémas et technologies XML.
+                  services web SOAP/WSDL basés sur des schémas et technologies
+                  XML.
                 </p>
                 <div class="projet_technologies">
                   <span class="tech_etiquette">XML</span>
@@ -1776,8 +2044,24 @@
                   <span class="tech_etiquette">PHP</span>
                 </div>
                 <div class="projet_actions">
-                  <button type="button" class="btn_projet_details" data-projet="university_systeme">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <button
+                    type="button"
+                    class="btn_projet_details"
+                    data-projet="university_systeme"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="16" x2="12" y2="12" />
+                      <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
                     Contexte
                   </button>
                   <a
@@ -1787,27 +2071,63 @@
                     class="projet_lien"
                   >
                     Voir le projet
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
                   </a>
                 </div>
               </article>
 
-<article class="carte_projet projet_trois reveler" data-projet-id="votenow">
+              <article
+                class="carte_projet projet_trois reveler"
+                data-projet-id="votenow"
+                data-cat="academique"
+              >
                 <div class="barre_projet"></div>
                 <div class="projet_entete">
                   <div class="projet_badge badge_trois">03</div>
                   <div class="projet_logo">
-                    <img src="images/projects/votenow.svg" alt="VoteNow" />
+                    <img src="images/projects/votenow/logo.svg" alt="VoteNow" />
                   </div>
                 </div>
                 <div class="votenow_switch_bar">
-                  <button type="button" class="v_btn" id="vbtn_v1" onclick="basculerVoteNow('v1')">V1 (Web 1)</button>
-                  <button type="button" class="v_btn actif" id="vbtn_v2" onclick="basculerVoteNow('v2')">V2 (Sécurité)</button>
+                  <button
+                    type="button"
+                    class="v_btn"
+                    id="vbtn_v1"
+                    onclick="basculerVoteNow('v1')"
+                  >
+                    V1 (Web 1)
+                  </button>
+                  <button
+                    type="button"
+                    class="v_btn actif"
+                    id="vbtn_v2"
+                    onclick="basculerVoteNow('v2')"
+                  >
+                    V2 (Sécurité)
+                  </button>
                 </div>
+                <span class="badge_cat_projet badge_academique"
+                  >Projet Académique</span
+                >
                 <h3 class="projet_titre">VoteNow</h3>
                 <p class="projet_description" id="votenow_desc">
-                  Plateforme de vote électronique sécurisée développée en PHP & MySQL
-                  avec protection contre les fraudes et gestion stricte des sessions.
+                  Plateforme de vote électronique sécurisée développée en PHP &
+                  MySQL avec protection contre les fraudes et gestion stricte
+                  des sessions.
                 </p>
                 <div class="projet_technologies" id="votenow_techs">
                   <span class="tech_etiquette">PHP</span>
@@ -1815,8 +2135,24 @@
                   <span class="tech_etiquette">Sécurité</span>
                 </div>
                 <div class="projet_actions">
-                  <button type="button" class="btn_projet_details" data-projet="votenow">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <button
+                    type="button"
+                    class="btn_projet_details"
+                    data-projet="votenow"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="16" x2="12" y2="12" />
+                      <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
                     Contexte
                   </button>
                   <a
@@ -1826,23 +2162,60 @@
                     class="projet_lien"
                   >
                     Voir le projet
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
                   </a>
                 </div>
               </article>
 
-<article class="carte_projet projet_deux reveler" data-projet-id="bibliotech">
+              <article
+                class="carte_projet projet_deux reveler"
+                data-projet-id="bibliotech"
+                data-cat="academique"
+              >
                 <div class="barre_projet"></div>
                 <div class="projet_entete">
                   <div class="projet_badge badge_deux">02</div>
                   <div class="projet_logo_placeholder">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                      <path
+                        d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                      />
+                    </svg>
                   </div>
                 </div>
+                <span class="badge_cat_projet badge_academique"
+                  >Projet Académique</span
+                >
                 <h3 class="projet_titre">BiblioTech</h3>
                 <p class="projet_description">
-                  Système de gestion d'une bibliothèque universitaire : catalogage,
-                  emprunts, abonnés et suivi des retards avec documentation collaborative.
+                  Système de gestion d'une bibliothèque universitaire :
+                  catalogage, emprunts, abonnés et suivi des retards avec
+                  documentation collaborative.
                 </p>
                 <div class="projet_technologies">
                   <span class="tech_etiquette">HTML5</span>
@@ -1851,8 +2224,24 @@
                   <span class="tech_etiquette">MySQL</span>
                 </div>
                 <div class="projet_actions">
-                  <button type="button" class="btn_projet_details" data-projet="bibliotech">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <button
+                    type="button"
+                    class="btn_projet_details"
+                    data-projet="bibliotech"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="16" x2="12" y2="12" />
+                      <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
                     Contexte
                   </button>
                   <a
@@ -1862,23 +2251,63 @@
                     class="projet_lien"
                   >
                     Dossier Drive
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
                   </a>
                 </div>
               </article>
 
-<article class="carte_projet projet_un reveler" data-projet-id="cv">
+              <article
+                class="carte_projet projet_un reveler"
+                data-projet-id="cv"
+                data-cat="academique"
+              >
                 <div class="barre_projet"></div>
                 <div class="projet_entete">
                   <div class="projet_badge badge_un">01</div>
                   <div class="projet_logo_placeholder">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                      />
+                      <polyline points="14 2 14 8 20 8" />
+                      <line x1="16" y1="13" x2="8" y2="13" />
+                      <line x1="16" y1="17" x2="8" y2="17" />
+                      <polyline points="10 9 9 9 8 9" />
+                    </svg>
                   </div>
                 </div>
+                <span class="badge_cat_projet badge_academique"
+                  >Projet Académique</span
+                >
                 <h3 class="projet_titre">Mon CV en ligne</h3>
                 <p class="projet_description">
-                  Curriculum Vitae web interactif et responsive mettant en valeur
-                  le parcours académique, les compétences et les réalisations.
+                  Curriculum Vitae web interactif et responsive mettant en
+                  valeur le parcours académique, les compétences et les
+                  réalisations.
                 </p>
                 <div class="projet_technologies">
                   <span class="tech_etiquette">HTML5</span>
@@ -1886,8 +2315,24 @@
                   <span class="tech_etiquette">JavaScript</span>
                 </div>
                 <div class="projet_actions">
-                  <button type="button" class="btn_projet_details" data-projet="cv">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <button
+                    type="button"
+                    class="btn_projet_details"
+                    data-projet="cv"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="16" x2="12" y2="12" />
+                      <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
                     Contexte
                   </button>
                   <a
@@ -1897,23 +2342,54 @@
                     class="projet_lien"
                   >
                     Voir en ligne
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
                   </a>
                 </div>
               </article>
             </div>
-          <!-- NAVIGATION CAROUSEL -->
-          <nav class="carousel_nav" id="carousel_nav" aria-label="Navigation projets">
-            <button class="carousel_btn" id="btn_prev" aria-label="Page précédente" disabled>
-              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-            <div class="carousel_pages" id="carousel_pages"></div>
-            <button class="carousel_btn" id="btn_next" aria-label="Page suivante">
-              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-          </nav>
-
-          </div><!-- fin carousel_projets_wrapper -->
+            <!-- NAVIGATION CAROUSEL -->
+            <nav
+              class="carousel_nav"
+              id="carousel_nav"
+              aria-label="Navigation projets"
+            >
+              <button
+                class="carousel_btn"
+                id="btn_prev"
+                aria-label="Page précédente"
+                disabled
+              >
+                <svg viewBox="0 0 24 24">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <div class="carousel_pages" id="carousel_pages"></div>
+              <button
+                class="carousel_btn"
+                id="btn_next"
+                aria-label="Page suivante"
+              >
+                <svg viewBox="0 0 24 24">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            </nav>
+          </div>
+          <!-- fin carousel_projets_wrapper -->
 
           <div class="voir_tout reveler">
             <a
@@ -1960,46 +2436,30 @@
                     <p class="element_valeur">mouhamedlniang@gmail.com</p>
                   </div>
                 </a>
-                <a
-                  href="https://github.com/mhdlamine21"
-                  target="_blank"
-                  rel="noopener"
-                  class="element_contact"
-                >
-                  <div class="icone_contact fond_rose">
-                    <img
-                      src="images/icons/github.svg"
-                      alt="GitHub"
-                      width="20"
-                      height="20"
-                    />
-                  </div>
-                  <div>
-                    <p class="element_label">GitHub</p>
-                    <p class="element_valeur">github.com/mhdlamine21</p>
-                  </div>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/mouhamadou-lamine-niang-a886a2361/"
-                  target="_blank"
-                  rel="noopener"
-                  class="element_contact"
-                >
+                <div class="element_contact">
                   <div class="icone_contact fond_bleu_fonce">
-                    <img
-                      src="images/icons/linkedin.svg"
-                      alt="LinkedIn"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="20"
-                    />
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                      ></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
                   </div>
                   <div>
-                    <p class="element_label">LinkedIn</p>
-                    <p class="element_valeur">
-                      linkedin.com/in/mouhamadou-lamine-niang
-                    </p>
+                    <p class="element_label">Localisation</p>
+                    <p class="element_valeur">Thiès, Sénégal 🇸🇳</p>
                   </div>
-                </a>
+                </div>
               </div>
               <p class="suivre_label">Me suivre</p>
               <div class="reseaux_sociaux">
@@ -2228,7 +2688,8 @@
       <div class="conteneur pied_interieur">
         <span class="pied_logo">&lt;Dev /&gt;</span>
         <p class="pied_copyright">
-          © 2026 Mouhamadou Lamine Niang - Software Developer 🇸🇳
+          © 2026 Mouhamadou Lamine Niang • Software Engineering Student &
+          Backend Developer 🇸🇳
         </p>
         <div class="pied_reseaux">
           <a
@@ -2290,7 +2751,9 @@
         <div class="modal_proj_header">
           <div class="modal_proj_header_info">
             <span class="modal_proj_badge" id="modal_proj_badge">Projet</span>
-            <h3 class="modal_proj_titre" id="modal_proj_titre">Titre du projet</h3>
+            <h3 class="modal_proj_titre" id="modal_proj_titre">
+              Titre du projet
+            </h3>
             <p class="modal_proj_contexte" id="modal_proj_contexte">Contexte</p>
           </div>
           <button
@@ -2325,7 +2788,9 @@
             <div class="modal_proj_tags" id="modal_proj_tags"></div>
           </div>
           <div class="modal_proj_section" id="modal_proj_outils_sec">
-            <h4 class="modal_proj_soustitre">Outils Collaboratifs & Environnement</h4>
+            <h4 class="modal_proj_soustitre">
+              Outils Collaboratifs & Environnement
+            </h4>
             <div class="modal_proj_outils" id="modal_proj_outils"></div>
           </div>
         </div>
@@ -2346,7 +2811,9 @@
               stroke="currentColor"
               stroke-width="2"
             >
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              />
               <polyline points="15 3 21 3 21 9" />
               <line x1="10" y1="14" x2="21" y2="3" />
             </svg>
@@ -2376,9 +2843,15 @@
         <!-- En-tête -->
         <div class="modal_cert_header">
           <div class="modal_cert_header_info">
-            <span class="modal_cert_badge" id="modal_cert_badge">Certification</span>
-            <h3 class="modal_cert_titre" id="modal_cert_titre">Titre du certificat</h3>
-            <p class="modal_cert_emetteur" id="modal_cert_emetteur">Organisme émetteur</p>
+            <span class="modal_cert_badge" id="modal_cert_badge"
+              >Certification</span
+            >
+            <h3 class="modal_cert_titre" id="modal_cert_titre">
+              Titre du certificat
+            </h3>
+            <p class="modal_cert_emetteur" id="modal_cert_emetteur">
+              Organisme émetteur
+            </p>
           </div>
           <button
             class="modal_cert_fermer"
@@ -2412,7 +2885,13 @@
                 <span class="pdf_status_dot"></span>
                 <span>Document officiel vérifié • Format PDF</span>
               </div>
-              <a href="#" id="modal_quick_open" target="_blank" rel="noopener noreferrer" class="modal_quick_link">
+              <a
+                href="#"
+                id="modal_quick_open"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="modal_quick_link"
+              >
                 Ouvrir dans un nouvel onglet ↗
               </a>
             </div>
@@ -2426,14 +2905,24 @@
           </div>
 
           <!-- Vue info pour certificats sans PDF -->
-          <div class="modal_info_wrapper" id="modal_info_container" style="display: none;">
+          <div
+            class="modal_info_wrapper"
+            id="modal_info_container"
+            style="display: none"
+          >
             <div class="modal_info_card">
               <div class="modal_info_icon" id="modal_info_icon">
-                <img src="images/icons/certificate.svg" alt="" width="48" height="48" />
+                <img
+                  src="images/icons/certificate.svg"
+                  alt=""
+                  width="48"
+                  height="48"
+                />
               </div>
               <h4 id="modal_info_titre">Détails de la certification</h4>
               <p id="modal_info_desc">
-                Cette certification valide des compétences clés en développement et ingénierie logicielle.
+                Cette certification valide des compétences clés en développement
+                et ingénierie logicielle.
               </p>
               <div class="modal_info_tags" id="modal_info_tags"></div>
             </div>
@@ -2483,7 +2972,9 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              ></path>
               <polyline points="15 3 21 3 21 9"></polyline>
               <line x1="10" y1="14" x2="21" y2="3"></line>
             </svg>
